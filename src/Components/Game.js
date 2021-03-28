@@ -1,8 +1,25 @@
 import React from 'react'
+import Board from './Board'
 
 function Game() {
+    
+    const handleClick = () => {
+
+    }
+
+    const jumpTo = () => {
+
+    }
+
+    const renderMoves = () => {
+        
+    }
+
     return (
-        <div>Tic-Tac-Toe Game</div>
+        <div>
+            <h1>Tic-Tac-Toe Game</h1>
+            <Board onClick={handleClick}/>
+        </div>
     )
 }
 
