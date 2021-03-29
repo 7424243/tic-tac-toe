@@ -7,14 +7,22 @@ function Game() {
     //set the board as empty initially
     //'board' is the state
     //'setBoard' is the setState
-    const[board, setBoard] = useState(Array(9).fill(null))
+    const [board, setBoard] = useState(Array(9).fill(null))
 
-    const[xIsNext, setXIsNext] = useState(true)
+    const [xIsNext, setXIsNext] = useState(true)
 
     const winner = calculateWinner(board)
     
-    const handleClick = () => {
-
+    const handleClick = (i) => {
+        const boardCopy = [...board]
+        //if user clicked an occupied square  or if game is won, return
+        if(winner || boardCopy[i]) {
+            return
+        }
+        //put an X or O in the clicked square
+        boardCopy[i] = xIsNext ? 'X' : 'O'
+        setBoard(boardCopy)
+        setXIsNext(!xIsNext)
     }
 
     const jumpTo = () => {
