@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import Game from './Components/Game'
 
 
@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <Game/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
