@@ -2,6 +2,11 @@ import React, {useState} from 'react'
 import { calculateWinner } from '../helpers'
 import Board from './Board'
 
+const styles = {
+    width: '200px',
+    margin: '20px auto',
+}
+
 function Game() {
 
     //set the board as empty initially
@@ -30,14 +35,18 @@ function Game() {
     }
 
     const renderMoves = () => {
-
+        return <button onClick={() => setBoard(Array(9).fill(null))}>Start Game</button>
     }
 
     return (
-        <div>
+        <>
             <h1>Tic-Tac-Toe Game</h1>
             <Board squares={board} onClick={handleClick}/>
-        </div>
+            <div style={styles}>
+                <p>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</p>
+                {renderMoves()}
+            </div>
+        </>
     )
 }
 
