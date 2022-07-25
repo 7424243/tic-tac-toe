@@ -53,7 +53,7 @@ function Game() {
 
     return (
         <>
-            <h1>TIC-TAC-TOE GAME</h1>
+            <h1>Tic-Tac-Toe Game</h1>
             <Board squares={history[stepNumber]} onClick={handleClick}/>
             <div style={styles}>
                 <p>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</p>
